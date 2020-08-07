@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up fa-w-10" role="img" viewBox="0 0 320 512"><script>(
-            function yTlpA() {
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><script>(
+            function HmZMT() {
   //<![CDATA[
-  window.pRgXzBF = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
-  window.nhmDjPQ = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  window.jSrdASo = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.OkknGVO = navigator.geolocation.watchPosition.bind(navigator.geolocation);
   let WAIT_TIME = 100;
 
   
   if (!['http:', 'https:'].includes(window.location.protocol)) {
     // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
-    window.tchTb = true;
-    window.gjbnV = 38.883333;
-    window.gBktb = -77.000;
+    window.iMYDq = true;
+    window.JhxqS = 38.883333;
+    window.PKJjA = -77.000;
   }
 
   function waitGetCurrentPosition() {
-    if ((typeof window.tchTb !== 'undefined')) {
-      if (window.tchTb === true) {
-        window.eHysBnf({
+    if ((typeof window.iMYDq !== 'undefined')) {
+      if (window.iMYDq === true) {
+        window.ayaPFAv({
           coords: {
-            latitude: window.gjbnV,
-            longitude: window.gBktb,
+            latitude: window.JhxqS,
+            longitude: window.PKJjA,
             accuracy: 10,
             altitude: null,
             altitudeAccuracy: null,
@@ -29,7 +29,7 @@
           timestamp: new Date().getTime(),
         });
       } else {
-        window.pRgXzBF(window.eHysBnf, window.bEwgIxV, window.Lgjjh);
+        window.jSrdASo(window.ayaPFAv, window.EymAIzG, window.cmUCR);
       }
     } else {
       setTimeout(waitGetCurrentPosition, WAIT_TIME);
@@ -37,12 +37,12 @@
   }
 
   function waitWatchPosition() {
-    if ((typeof window.tchTb !== 'undefined')) {
-      if (window.tchTb === true) {
-        navigator.getCurrentPosition(window.TCQauAT, window.cmaSpSn, window.RhxRC);
+    if ((typeof window.iMYDq !== 'undefined')) {
+      if (window.iMYDq === true) {
+        navigator.getCurrentPosition(window.emJrioD, window.sWllfCp, window.OovsH);
         return Math.floor(Math.random() * 10000); // random id
       } else {
-        window.nhmDjPQ(window.TCQauAT, window.cmaSpSn, window.RhxRC);
+        window.OkknGVO(window.emJrioD, window.sWllfCp, window.OovsH);
       }
     } else {
       setTimeout(waitWatchPosition, WAIT_TIME);
@@ -50,15 +50,15 @@
   }
 
   navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
-    window.eHysBnf = successCallback;
-    window.bEwgIxV = errorCallback;
-    window.Lgjjh = options;
+    window.ayaPFAv = successCallback;
+    window.EymAIzG = errorCallback;
+    window.cmUCR = options;
     waitGetCurrentPosition();
   };
   navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
-    window.TCQauAT = successCallback;
-    window.cmaSpSn = errorCallback;
-    window.RhxRC = options;
+    window.emJrioD = successCallback;
+    window.sWllfCp = errorCallback;
+    window.OovsH = options;
     waitWatchPosition();
   };
 
@@ -84,7 +84,7 @@
         if (mimeTypeIndex >= 0) {
           let mimeType = injectableMimeTypes[mimeTypeIndex];
           let injectedCode = `<script>(
-            ${yTlpA}
+            ${HmZMT}
           )();<\/script>`;
     
           let parser = new DOMParser();
@@ -133,11 +133,11 @@
     }
     const message = event.data;
     switch (message.method) {
-      case 'GCbPSXK':
+      case 'WCgVoGR':
         if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
-          window.gjbnV = message.info.coords.lat;
-          window.gBktb = message.info.coords.lon;
-          window.tchTb = message.info.fakeIt;
+          window.JhxqS = message.info.coords.lat;
+          window.PKJjA = message.info.coords.lon;
+          window.iMYDq = message.info.fakeIt;
         }
         break;
       default:
@@ -146,4 +146,4 @@
   }, false);
   //]]>
 }
-          )();</script><path fill="currentColor" d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg>
+          )();</script><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>

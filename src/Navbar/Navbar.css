@@ -6,9 +6,18 @@ body{
 a {
     text-decoration: none;
     color: black;
+    cursor: pointer;
+    z-index: 1;
 }
 
-.header {
+.icon {
+    height:20px;
+    width:20px;
+    cursor: pointer;
+}
+
+/* TOP HEADER */
+.topHeader {
     height: 70px;
     width: 100%;
     border: 1px solid black;
@@ -23,35 +32,99 @@ a {
     margin: auto 50px;
 }
 
-.contentLinks {
+.leftHeader {
     display: flex;
-    width: 70%;
-    border: 1px green solid;
+    align-items:center;
+    justify-content: space-between;
+    width: 75%;
+    /* border: 1px green solid; */
 }
 
-.contentLinks > a {
+.contentLinks{
+    display:flex;
+    flex-direction: row;
+}
+
+.contentLinks > a{
     margin: auto 30px auto 0px;
     font-weight: bold;
     display: flex;
     align-items: center;
 }
 
-
-.carrotDown {
-    background-image: 'src/Navbar/angle-down-solid.svg';
-    height:20px;
-    width:20px;
+.contentLinks >a >img {
+    z-index: -1;
 }
 
+.searchDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+}
+
+input {
+    margin-right: 5px;
+    height: 30px;
+}
 
 .signInLinks {
     display: flex;
     flex-direction: row;
-    width: 30%;
-    border: 1px green solid;
+    width: 25%;
+    /* border: 1px green solid; */
 }
 
-.signInLinks >p {
+.signInLinks >a {
     margin: auto 0px auto 30px;
 }
 
+/* BOTTOM HEADER */
+
+.bottomHeader {
+    height: 70px;
+    width: 100%;
+    background-color:  rgb(95, 23, 177);
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.infoDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 75%;
+    /* border: 1px white solid; */
+}
+.paw {
+    height: 35px;
+    margin: auto 50px auto 50px;
+    cursor: pointer;
+}
+
+.saveSearchDiv {
+    width: 25%;
+    display: flex;
+}
+
+.saveSearchDiv > button {
+    margin: auto;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background-color:white;
+    color: rgb(95, 23, 177);
+    font-weight: bold;
+    border-style: solid;
+    border-color: white;
+    cursor: pointer;
+}
+
+.saveSearchDiv > button:hover {
+    background-color: rgb(95, 23, 177);
+    color: white;
+}
+
+.saveSearchDiv > button:focus {
+    outline: none; 
+}

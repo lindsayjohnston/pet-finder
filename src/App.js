@@ -1,28 +1,49 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import Navbar from './Navbar/Navbar';
-import ClickHandler from './Navbar/clickHandler';
+// import clickHandler from './Navbar/clickHandler';
 import Animal from './Animal/Animal';
+import animalsObject from './Animal/Animals-object';
 
-//ANIMAL PHOTOS
-import bullDog from './Images-animals/bullDog.jpeg';
-import husky from './Images-animals/husky.jpeg';
-import boyCat from './Images-animals/boyCat.jpg';
-import kitten from './Images-animals/kitten.jpeg';
-import muttPuppy from './Images-animals/muttPuppy.jpg';
 
 class App extends Component {
   state= {
-    animals: [
-      {id:'adsf', name: 'Sparky', age: 'Puppy', breed: 'Bull dog', milesAway: 3, photo: bullDog },
-      {id:'oerf', name: 'Luna', age: 'Adult', breed: 'Husky', milesAway: 2, photo: husky },
-      {id: '39fj', name: 'Bill', age: 'Kitten', breed: 'Cat', milesAway: 13, photo: kitten},
-      {id:'fjfjf', name: 'Farquat', age: 'Cat', breed: 'Cat', milesAway: 5, photo: boyCat },
-      {id:'049d', name: 'Yummi', age: 'Puppy', breed: 'Mix', milesAway: 3, photo: muttPuppy }
-    ]
+    animals: animalsObject,
+    showing: 'animals'
   }
 
-  
+  deleteAnimalHandler= (index) =>{
+    const newAnimals= [...this.state.animals];
+    newAnimals.splice(index, 1);
+    this.setState({ animals: newAnimals });
+  }
+
+  filterAnimalsHandler=(event) =>{
+    console.log(event.target)
+  }
+
+  clickHandler=(event)=>{
+    console.log(event.target);
+    if(event.target.id==='dogs'){
+        const animals= [...animalsObject];
+        //CHANGE SHOW ANIMALS
+        const showAnimals= animals.filter(animal => animal.type ==='dog');
+        this.setState({ animals: showAnimals, showing: 'dogs' });
+    }
+    if(event.target.id==='cats'){
+      const animals= [...animalsObject];
+      //CHANGE SHOW ANIMALS
+      const showAnimals= animals.filter(animal => animal.type ==='cat');
+      this.setState({ animals: showAnimals, showing: 'cats' });
+    }
+    if(event.target.id==='faves'){
+        this.setState({ showing: 'of your favorite animals' })
+    } if(event.target.id==='search-icon'){
+        alert('search!');
+    } if(event.target.id==='paw'){
+      this.setState({ animals: animalsObject, showing: 'animals' });
+    }
+};
 
   render() {
     let animals = (
@@ -35,6 +56,7 @@ class App extends Component {
             milesAway={animal.milesAway}
             key={animal.id}
             photo={animal.photo}
+            click={() => this.deleteAnimalHandler(index)}
           />
         })}
       </div>
@@ -44,10 +66,12 @@ class App extends Component {
       <div className="App">
         
           <Navbar
-            click={(event) => ClickHandler(event)}
+            totalAnimals={this.state.animals.length}
+            click={(event) => this.clickHandler(event)}
+            showing={this.state.showing}
           />
         
-            {animals}
+          {animals}
             
 
 

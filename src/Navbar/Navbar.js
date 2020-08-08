@@ -3,15 +3,90 @@ import classes from './Navbar.css';
 import carrotDown from './Images/angle-down-solid.svg';
 import searchIcon from './Images/search-solid.svg';
 import paw from './Images/paw-solid-white.png';
-
-const test= (props) =>{
-    return(
-        <div>DID IT WORK?</div>
-    )
-}
+import dogIcon from './Images/dog-solid.svg';
+import catIcon from './Images/cat-solid.svg';
 
 
 const navbar = (props) => {
+    let navBarBottom =
+        (
+            <section className={classes.bottomHeader}>
+                <div className={classes.infoDiv}>
+                    <img
+                        id='paw'
+                        onClick={props.click}
+                        className={classes.paw}
+                        src={paw}
+                        alt='paw'></img>
+
+                    <p>{props.totalAnimals} {props.showing} near you!</p>
+                </div>
+                <div className={classes.saveSearchDiv}>
+                    <button>SAVE SEARCH</button>
+                </div>
+            </section>
+        )
+
+    if (props.showing === 'dogs') {
+        navBarBottom = (
+            <section className={classes.bottomHeader}>
+                <div className={classes.infoDiv}>
+                    <img
+                        className={classes.paw}
+                        src={dogIcon}
+                        alt='paw'></img>
+
+                    <div className={classes.options}>
+                    <p>{props.totalAnimals} {props.showing} near you!</p>
+                        <div>
+                            <input type='radio' id='small' name='type'></input>
+                            <label for='small'>Small</label>
+                        </div>
+                        <div>
+                            <input type='radio' id='small' name='type'></input>
+                            <label for='small'>Medium</label>
+                        </div>
+
+                        <div>
+                            <input type='radio' id='small' name='type'></input>
+                            <label for='small'>Large</label>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div className={classes.saveSearchDiv}>
+                    <button>SAVE SEARCH</button>
+                </div>
+            </section>
+        )
+    }
+    if (props.showing === 'cats') {
+        navBarBottom = (
+            <section className={classes.bottomHeader}>
+                <div className={classes.infoDiv}>
+                    <img
+                        className={classes.paw}
+                        src={catIcon}
+                        alt='paw'></img>
+                    <div className={classes.options}>
+                        <div>
+                            <input type='radio' id='small' name='type'></input>
+                            <label for='small'>Kitten</label>
+                        </div>
+                        <div>
+                            <input type='radio' id='small' name='type'></input>
+                            <label for='small'>Full-grown</label>
+                        </div>
+                    </div>
+                </div>
+                <div className={classes.saveSearchDiv}>
+                    <button>SAVE SEARCH</button>
+                </div>
+            </section>
+        )
+
+    }
     return (
         <div className={classes.header}>
             <section className={classes.topHeader}>
@@ -60,21 +135,23 @@ const navbar = (props) => {
 
 
             </section>
-            <section className={classes.bottomHeader}>
-                <div className={classes.infoDiv}>
-                        <img
-                            id='paw' 
-                            onClick={props.click}
-                            className={classes.paw}
-                            src={paw}
-                            alt='paw'></img>
+            {navBarBottom}
 
-                    <p>15 animals near you!</p>
+            {/* <section className={classes.bottomHeader}>
+                <div className={classes.infoDiv}>
+                    <img
+                        id='paw'
+                        onClick={props.click}
+                        className={classes.paw}
+                        src={paw}
+                        alt='paw'></img>
+
+                    <p>{props.totalAnimals} {props.showing} near you!</p>
                 </div>
                 <div className={classes.saveSearchDiv}>
                     <button>SAVE SEARCH</button>
                 </div>
-            </section>
+            </section> */}
         </div>
     )
 };

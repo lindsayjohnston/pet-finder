@@ -1,7 +1,9 @@
 const clickHandler=(event)=>{
     console.log(event.target);
     if(event.target.id==='dogs'){
-        alert('dogs!');
+        const newAnimals= [...this.state.animals];
+        newAnimals.splice(0, 1);
+        this.setState({ animals: newAnimals });
     }
     if(event.target.id==='cats'){
         alert('cats!');

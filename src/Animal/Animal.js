@@ -4,8 +4,8 @@ import classes from './Animal.css';
 
 const animal = (props) => {
     return (
-        <div className={classes.animalCard}>
-            <img className={classes.animalPhoto} src={props.photo} alt='cute animal'></img>
+        <div className={classes.animalCard} onClick={props.click}>
+            <img className={classes.animalPhoto}  alt='cute animal' src={props.photo}></img>
             <div className={classes.petCardBody}>
                 <div className={classes.petCardBodyDetails}>
                     <h3>{props.name}</h3>

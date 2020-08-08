@@ -45,14 +45,15 @@ a {
     flex-direction: row;
 }
 
-.contentLinks > a{
+.contentLinks > div{
     margin: auto 30px auto 0px;
     font-weight: bold;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
-.contentLinks >a >img {
+.contentLinks >div >img {
     z-index: -1;
 }
 
@@ -75,8 +76,9 @@ input {
     /* border: 1px green solid; */
 }
 
-.signInLinks >a {
+.signInLinks > p {
     margin: auto 0px auto 30px;
+    cursor: pointer;
 }
 
 /* BOTTOM HEADER */

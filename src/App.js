@@ -17,6 +17,10 @@ class App extends Component {
           />
           <section className={classes.main}>
             <Animal></Animal>
+            <Animal></Animal>
+            <Animal></Animal>
+            <Animal></Animal>
+            <Animal></Animal>
 
           </section>
           

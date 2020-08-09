@@ -12,14 +12,16 @@ const navbar = (props) => {
         (
             <section className={classes.bottomHeader}>
                 <div className={classes.infoDiv}>
-                    <img
-                        id='paw'
-                        onClick={props.click}
-                        className={classes.paw}
-                        src={paw}
-                        alt='paw'></img>
+                    <div className={classes.nearYouDiv}>
+                        <img
+                            id='paw'
+                            onClick={props.click}
+                            className={classes.bigIcon}
+                            src={paw}
+                            alt='paw'></img>
 
-                    <p>{props.totalAnimals} {props.showing} near you!</p>
+                        <p>{props.totalAnimals} {props.showing} near you!</p>
+                    </div>
                 </div>
                 <div className={classes.saveSearchDiv}>
                     <button>SAVE SEARCH</button>
@@ -31,25 +33,28 @@ const navbar = (props) => {
         navBarBottom = (
             <section className={classes.bottomHeader}>
                 <div className={classes.infoDiv}>
-                    <img
-                        className={classes.paw}
-                        src={dogIcon}
-                        alt='paw'></img>
+                    <div className={classes.nearYouDiv}>
+                        <img
+                            className={classes.bigIcon}
+                            src={dogIcon}
+                            alt='paw'></img>
+                        <p>{props.totalAnimals} {props.showing} near you!</p>
 
+                    </div>
                     <div className={classes.options}>
-                    <p>{props.totalAnimals} {props.showing} near you!</p>
-                        <div>
-                            <input type='radio' id='small' name='type'></input>
-                            <label for='small'>Small</label>
-                        </div>
-                        <div>
-                            <input type='radio' id='small' name='type'></input>
-                            <label for='small'>Medium</label>
-                        </div>
 
                         <div>
                             <input type='radio' id='small' name='type'></input>
-                            <label for='small'>Large</label>
+                            <label htmlFor='small'>Small</label>
+                        </div>
+                        <div>
+                            <input type='radio' id='medium' name='type'></input>
+                            <label htmlFor='medium'>Medium</label>
+                        </div>
+
+                        <div>
+                            <input type='radio' id='large' name='type'></input>
+                            <label htmlFor='large'>Large</label>
                         </div>
 
                     </div>
@@ -65,18 +70,24 @@ const navbar = (props) => {
         navBarBottom = (
             <section className={classes.bottomHeader}>
                 <div className={classes.infoDiv}>
-                    <img
-                        className={classes.paw}
-                        src={catIcon}
-                        alt='paw'></img>
+                    <div className={classes.nearYouDiv}>
+                        <img
+                            className={classes.bigIcon}
+                            src={catIcon}
+                            alt='paw'></img>
+                        <p>{props.totalAnimals} {props.showing} near you!</p>
+
+                    </div>
+
                     <div className={classes.options}>
+
                         <div>
-                            <input type='radio' id='small' name='type'></input>
-                            <label for='small'>Kitten</label>
+                            <input type='radio' id='kitten' name='type'></input>
+                            <label htmlFor='kitten'>Kitten</label>
                         </div>
                         <div>
-                            <input type='radio' id='small' name='type'></input>
-                            <label for='small'>Full-grown</label>
+                            <input type='radio' id='adult' name='type'></input>
+                            <label htmlFor='adult'>Adult</label>
                         </div>
                     </div>
                 </div>
@@ -86,6 +97,25 @@ const navbar = (props) => {
             </section>
         )
 
+    }
+    if (props.showing === 'faves') {
+        navBarBottom = (
+            <section className={classes.bottomHeader}>
+                <div className={classes.infoDiv}>
+                    <div className={classes.nearYouDiv}>
+                        <img
+                            className={classes.bigIcon}
+                            src={paw}
+                            alt='paw'></img>
+                        <p>All your faves that still need a home...</p>
+
+                    </div>
+                </div>
+                <div className={classes.saveSearchDiv}>
+                    <button>SAVE SEARCH</button>
+                </div>
+            </section>
+        )
     }
     return (
         <div className={classes.header}>
@@ -112,7 +142,12 @@ const navbar = (props) => {
                             id='faves'
                             className={classes.contentLink}
                             href='faves'>FAVES
-                        <img className={classes.icon} src={carrotDown} alt='carrot-down'></img>
+                        </div>
+                        <div
+                            onClick={props.click}
+                            id='showAll'
+                            className={classes.contentLink}
+                            href='all'>ALL
                         </div>
                     </div>
 
@@ -142,7 +177,7 @@ const navbar = (props) => {
                     <img
                         id='paw'
                         onClick={props.click}
-                        className={classes.paw}
+                        className={classes.bigIcon}
                         src={paw}
                         alt='paw'></img>
 

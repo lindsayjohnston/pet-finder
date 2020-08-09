@@ -1,31 +1,26 @@
 import React, { Component } from 'react';
 import classes from './App.css';
 import Navbar from './Navbar/Navbar';
-// import clickHandler from './Navbar/clickHandler';
 import Animal from './Animal/Animal';
 import animalsObject from './Animal/Animals-object';
+import paw from './Navbar/Images/paw-solid.svg';
 
 
 class App extends Component {
   state = {
     animals: animalsObject,
     showing: 'animals',
-    userFaves: []
+    userFaves: [{id:'no-faves', name: `You haven't chosen any faves yet!`, photo: paw}]
   }
 
   addFaveAnimalHandler = (id) => {
     const newAnimals = [...this.state.animals];
     const newFaves = [...this.state.userFaves];
-    let checkFaves;
-
-    if(newFaves.length >0){
-      checkFaves = newFaves.filter(animal => {
+    const checkFaves = newFaves.filter(animal => {
         return animal.id === id;
-      });
-    };
-    
-    
-    if (checkFaves === undefined) {
+    });
+  
+    if (checkFaves.length === 0) {
       const fave = newAnimals.find(animal => {
         return animal.id === id;
       });
@@ -34,11 +29,7 @@ class App extends Component {
     }
   }
 
-  filterAnimalsHandler = (event) => {
-    console.log(event.target)
-  }
-
-  clickHandler = (event) => {
+  navBarClickHandler = (event) => {
     console.log(event.target);
     if (event.target.id === 'dogs') {
       const animals = [...animalsObject];
@@ -48,15 +39,18 @@ class App extends Component {
     }
     if (event.target.id === 'cats') {
       const animals = [...animalsObject];
-      //CHANGE SHOW ANIMALS
       const showAnimals = animals.filter(animal => animal.type === 'cat');
       this.setState({ animals: showAnimals, showing: 'cats' });
     }
     if (event.target.id === 'faves') {
-      this.setState({ showing: 'of your favorite animals' })
+      const faves= [...this.state.userFaves];
+      if (faves.length > 1){
+        faves.splice(0, 1); //take away the default
+      }
+      this.setState({ animals: faves, showing: 'faves' });
     } if (event.target.id === 'search-icon') {
       alert('search!');
-    } if (event.target.id === 'paw') {
+    } if (event.target.id === 'showAll') {
       this.setState({ animals: animalsObject, showing: 'animals' });
     }
   };
@@ -83,7 +77,7 @@ class App extends Component {
 
         <Navbar
           totalAnimals={this.state.animals.length}
-          click={(event) => this.clickHandler(event)}
+          click={(event) => this.navBarClickHandler(event)}
           showing={this.state.showing}
         />
 

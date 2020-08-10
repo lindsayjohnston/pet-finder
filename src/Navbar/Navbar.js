@@ -5,7 +5,8 @@ import searchIcon from './Images/search-solid.svg';
 import paw from './Images/paw-solid-white.png';
 import dogIcon from './Images/dog-solid.svg';
 import catIcon from './Images/cat-solid.svg';
-
+import barsIcon from './Images/bars-solid.svg';
+import heartIcon from '../Animal/heart-solid.svg';
 
 const navbar = (props) => {
     let navBarBottom =
@@ -150,7 +151,6 @@ const navbar = (props) => {
                             href='all'>ALL
                         </div>
                     </div>
-
                     <div className={classes.searchDiv}>
                         <input className={classes.searchInput} type='text' />
                         <img
@@ -161,6 +161,11 @@ const navbar = (props) => {
                             alt='search-icon'>
                         </img>
                     </div>
+                    <div className={classes.contentLinksMedium}>
+                        <img src={heartIcon} alt='heart icon'></img>
+                        <img  src={barsIcon} alt='bars icon'></img>
+                    </div>
+
                 </section>
 
                 <section className={classes.signInLinks}>

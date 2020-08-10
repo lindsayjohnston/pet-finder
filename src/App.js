@@ -119,7 +119,7 @@ class App extends Component {
       <div className="App">
 
         <Navbar
-          totalAnimals={this.state.animals.length}
+          totalAnimals={this.state.show.length}
           click={(event) => this.navBarClickHandler(event)}
           showing={this.state.showing}
         />

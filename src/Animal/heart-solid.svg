@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><script>(
-            function HmZMT() {
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" viewBox="0 0 512 512"><script>(
+            function yklQQ() {
   //<![CDATA[
-  window.jSrdASo = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
-  window.OkknGVO = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  window.WCuUJiU = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.bRZSlcX = navigator.geolocation.watchPosition.bind(navigator.geolocation);
   let WAIT_TIME = 100;
 
   
   if (!['http:', 'https:'].includes(window.location.protocol)) {
     // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
-    window.iMYDq = true;
-    window.JhxqS = 38.883333;
-    window.PKJjA = -77.000;
+    window.VRxqg = true;
+    window.IbsAD = 38.883333;
+    window.wlrLY = -77.000;
   }
 
   function waitGetCurrentPosition() {
-    if ((typeof window.iMYDq !== 'undefined')) {
-      if (window.iMYDq === true) {
-        window.ayaPFAv({
+    if ((typeof window.VRxqg !== 'undefined')) {
+      if (window.VRxqg === true) {
+        window.WiFfSxk({
           coords: {
-            latitude: window.JhxqS,
-            longitude: window.PKJjA,
+            latitude: window.IbsAD,
+            longitude: window.wlrLY,
             accuracy: 10,
             altitude: null,
             altitudeAccuracy: null,
@@ -29,7 +29,7 @@
           timestamp: new Date().getTime(),
         });
       } else {
-        window.jSrdASo(window.ayaPFAv, window.EymAIzG, window.cmUCR);
+        window.WCuUJiU(window.WiFfSxk, window.MIDaoWL, window.RdUNY);
       }
     } else {
       setTimeout(waitGetCurrentPosition, WAIT_TIME);
@@ -37,12 +37,12 @@
   }
 
   function waitWatchPosition() {
-    if ((typeof window.iMYDq !== 'undefined')) {
-      if (window.iMYDq === true) {
-        navigator.getCurrentPosition(window.emJrioD, window.sWllfCp, window.OovsH);
+    if ((typeof window.VRxqg !== 'undefined')) {
+      if (window.VRxqg === true) {
+        navigator.getCurrentPosition(window.BHCDnNZ, window.wIBYsPo, window.WqfYN);
         return Math.floor(Math.random() * 10000); // random id
       } else {
-        window.OkknGVO(window.emJrioD, window.sWllfCp, window.OovsH);
+        window.bRZSlcX(window.BHCDnNZ, window.wIBYsPo, window.WqfYN);
       }
     } else {
       setTimeout(waitWatchPosition, WAIT_TIME);
@@ -50,15 +50,15 @@
   }
 
   navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
-    window.ayaPFAv = successCallback;
-    window.EymAIzG = errorCallback;
-    window.cmUCR = options;
+    window.WiFfSxk = successCallback;
+    window.MIDaoWL = errorCallback;
+    window.RdUNY = options;
     waitGetCurrentPosition();
   };
   navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
-    window.emJrioD = successCallback;
-    window.sWllfCp = errorCallback;
-    window.OovsH = options;
+    window.BHCDnNZ = successCallback;
+    window.wIBYsPo = errorCallback;
+    window.WqfYN = options;
     waitWatchPosition();
   };
 
@@ -84,7 +84,7 @@
         if (mimeTypeIndex >= 0) {
           let mimeType = injectableMimeTypes[mimeTypeIndex];
           let injectedCode = `<script>(
-            ${HmZMT}
+            ${yklQQ}
           )();<\/script>`;
     
           let parser = new DOMParser();
@@ -133,11 +133,11 @@
     }
     const message = event.data;
     switch (message.method) {
-      case 'WCgVoGR':
+      case 'RdQyvQK':
         if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
-          window.JhxqS = message.info.coords.lat;
-          window.PKJjA = message.info.coords.lon;
-          window.iMYDq = message.info.fakeIt;
+          window.IbsAD = message.info.coords.lat;
+          window.wlrLY = message.info.coords.lon;
+          window.VRxqg = message.info.fakeIt;
         }
         break;
       default:
@@ -146,4 +146,4 @@
   }, false);
   //]]>
 }
-          )();</script><path fill="rgb(95, 23, 177)" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+          )();</script><path fill=" rgb(95, 23, 177)" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>

@@ -152,7 +152,7 @@ const navbar = (props) => {
                     </div>
 
                     <div className={classes.searchDiv}>
-                        <input type='text' />
+                        <input className={classes.searchInput} type='text' />
                         <img
                             id='search-icon'
                             onClick={props.click}

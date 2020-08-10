@@ -1,0 +1,96 @@
+.main{
+    position: absolute;
+    width: 100%;
+    background-color: rgb(95, 23, 177);
+    top: 0px;
+    bottom: 0px;
+}   
+
+.menuHeader {
+    height: 70px;
+    width: 100%;
+    background-color: #2e0152;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.main > ul {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20vw;
+    font-size: 30px;
+    padding: 0px;
+    width: 60%;
+}
+
+.main >ul > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon {
+    height: 30px;
+    width: 30px;
+    margin: auto 10px auto 0px;
+}
+
+.smallIcon {
+    height: 20px;
+    width: 20px;
+    margin-left: 15px;
+}
+
+.searchBox{
+    margin-left: 20vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px black solid;
+    width: 60%;
+    height: 55px;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.searchBox >input{
+   width: 100%;
+   border: none;
+   background-color: rgb(95, 23, 177);
+   color: white;
+   font-size: 20px;
+   padding-left: 5px;
+   
+}
+
+.searchBox >input::placeholder{
+    color: white;
+    opacity: 1;
+}
+
+.searchBox >input:focus{
+    outline: none;
+}
+
+.searchBox > button{
+    border-style: none;
+    border-left: 1px black solid;
+    width: fit-content;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(95, 23, 177);
+}
+
+.searchBox>button:focus{
+    outline: none;
+}
+
+.searchBox .smallIcon{
+    margin: 0px 10px 0px 15px;
+}

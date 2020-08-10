@@ -2,67 +2,70 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import Navbar from './Navbar/Navbar';
 import Animal from './Animal/Animal';
+import Menu from './Menu/Menu';
 import animalsObject from './Animal/Animals-object';
 import paw from './Navbar/Images/paw-solid.svg';
 
-const showAnimals=[...animalsObject];
-showAnimals.splice(0,1);
+
+
+const showAnimals = [...animalsObject];
+showAnimals.splice(0, 1);
 
 class App extends Component {
   state = {
     animals: [...animalsObject],
     show: [...showAnimals],
     showing: 'animals',
-    userFaves: [{id:'no-faves', name: `You haven't chosen any faves yet!`, photo: paw, fave: true}]
+    menuShowing: false
   }
 
   addFaveAnimalHandler = (clickedAnimal) => {
-    if(clickedAnimal.id !== 'no-faves'){
+    if (clickedAnimal.id !== 'no-faves') {
       const newAnimals = [...this.state.animals];
-      const newFaves = newAnimals.filter(animal=> animal.fave===true);
-      
+      const newFaves = newAnimals.filter(animal => animal.fave === true);
 
-    let clickedAnimalIndex= -1;
-    //CASE 1: ANIMAL WILL BE DELETED FROM FAVES
-    //CASE 2: ANIMAL WILL BE ADDED
-    
-    if(clickedAnimal.fave){
-        let tempAnimal=newAnimals.find((animal, index) =>{
-          clickedAnimalIndex= index;
-          return animal.id=== clickedAnimal.id;
+
+      let clickedAnimalIndex = -1;
+      //CASE 1: ANIMAL WILL BE DELETED FROM FAVES
+      //CASE 2: ANIMAL WILL BE ADDED
+
+      if (clickedAnimal.fave) {
+        let tempAnimal = newAnimals.find((animal, index) => {
+          clickedAnimalIndex = index;
+          return animal.id === clickedAnimal.id;
         });
-        newAnimals[clickedAnimalIndex].fave=false;
+        newAnimals[clickedAnimalIndex].fave = false;
 
-        tempAnimal= newFaves.find((animal, index)=>{
-          clickedAnimalIndex=index;
-          return animal.id===clickedAnimal.id;
+        tempAnimal = newFaves.find((animal, index) => {
+          clickedAnimalIndex = index;
+          return animal.id === clickedAnimal.id;
         });
 
         newFaves.splice(clickedAnimalIndex, 1);
-        if(newFaves.length > 1){
-          newFaves.splice(0,1); //get rid of default
+        if (newFaves.length > 1) {
+          newFaves.splice(0, 1); //get rid of default
         }
 
-        if(this.state.showing === 'faves'){
-          this.setState({animals: newAnimals, show: newFaves});
+        if (this.state.showing === 'faves') {
+          this.setState({ animals: newAnimals, show: newFaves });
         } else {
-          this.setState({animals: newAnimals});
+          this.setState({ animals: newAnimals });
         }
-        
-    } else {
+
+      } else {
         //find it in newAnimals
-        let tempAnimal= newAnimals.find((animal, index) =>{
-          clickedAnimalIndex= index;
-          return animal.id=== clickedAnimal.id;
+        let tempAnimal = newAnimals.find((animal, index) => {
+          clickedAnimalIndex = index;
+          return animal.id === clickedAnimal.id;
         });
-        newAnimals[clickedAnimalIndex].fave=true;
+        newAnimals[clickedAnimalIndex].fave = true;
         newFaves.push(clickedAnimal);
-        if(this.state.showing === 'faves'){
-          this.setState({animals: newAnimals, show: newFaves});
+        if (this.state.showing === 'faves') {
+          this.setState({ animals: newAnimals, show: newFaves });
         } else {
-          this.setState({animals: newAnimals});
+          this.setState({ animals: newAnimals });
         }
-    }
+      }
     }
   }
 
@@ -84,7 +87,7 @@ class App extends Component {
     if (event.target.id === 'faves') {
       const animals = [...this.state.animals];
       const showAnimals = animals.filter(animal => animal.fave === true);
-      if (showAnimals.length > 1){
+      if (showAnimals.length > 1) {
         showAnimals.splice(0, 1); //take away the default
       }
       this.setState({ show: showAnimals, showing: 'faves' });
@@ -94,6 +97,15 @@ class App extends Component {
       const animals = [...this.state.animals];
       animals.splice(0, 1);
       this.setState({ show: animals, showing: 'animals' });
+    } if (event.target.id === 'showMenu') {
+      this.setState({ menuShowing: true });
+    }
+  };
+
+  menuClickHandler = (event) => {
+    console.log(event.target);
+    if (event.target.id === 'hideMenu') {
+      this.setState({ menuShowing: false });
     }
   };
 
@@ -115,23 +127,29 @@ class App extends Component {
       </div>
     );
 
-    return (
-      <div className="App">
+    if (this.state.menuShowing === false) {
+      return (
+        <div className="App">
+          <Navbar
+            totalAnimals={this.state.show.length}
+            click={(event) => this.navBarClickHandler(event)}
+            showing={this.state.showing}
+          />
+          {animals}
+        </div>
+      );
+    } else {
+      return (
+        <div className="App">
 
-        <Navbar
-          totalAnimals={this.state.show.length}
-          click={(event) => this.navBarClickHandler(event)}
-          showing={this.state.showing}
-        />
+          <Menu
+            click={(event) => this.menuClickHandler(event)}
+          />
+        </div>
+      );
 
-        {animals}
+    }
 
-
-
-
-
-      </div>
-    );
   }
 }
 

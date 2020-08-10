@@ -162,8 +162,8 @@ const navbar = (props) => {
                         </img>
                     </div>
                     <div className={classes.contentLinksMedium}>
-                        <img src={heartIcon} alt='heart icon'></img>
-                        <img  src={barsIcon} alt='bars icon'></img>
+                        <img onClick={props.click} src={heartIcon} alt='heart icon'></img>
+                        <img  onClick={props.click} src={barsIcon} alt='bars icon' id='showMenu'></img>
                     </div>
 
                 </section>

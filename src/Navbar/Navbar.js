@@ -122,7 +122,7 @@ const navbar = (props) => {
         <div className={classes.header}>
             <section className={classes.topHeader}>
                 <section className={classes.leftHeader}>
-                    <h2 className={classes.petfinderLogo}>petfinder</h2>
+                    <h2 className={classes.petfinderLogo}>find-a-pet</h2>
 
                     <div className={classes.contentLinks}>
                         <div

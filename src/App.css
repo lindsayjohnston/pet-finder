@@ -3,11 +3,17 @@
   font-family: 'Baloo Tamma 2';
 }
 
+html{
+  min-height: 100%;
+  position:relative;
+}
+
 .main {
   padding: 30px 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   background-color: #efeef1;
+  min-height: 78vh;
 }
 

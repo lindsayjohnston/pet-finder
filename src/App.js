@@ -3,6 +3,7 @@ import classes from './App.css';
 import Navbar from './Navbar/Navbar';
 import Animal from './Animal/Animal';
 import Menu from './Menu/Menu';
+import Footer from './Footer/Footer';
 import animalsObject from './Animal/Animals-object';
 import paw from './Navbar/Images/paw-solid.svg';
 
@@ -147,6 +148,7 @@ class App extends Component {
             showing={this.state.showing}
           />
           {animals}
+          <Footer />
         </div>
       );
     } else {

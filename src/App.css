@@ -13,7 +13,21 @@ html{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #efeef1;
   min-height: 78vh;
+  max-width: 1200px;
 }
+ .animalsDiv {
+  background-color: #efeef1;
+  display: flex;
+  justify-content: center;
+ }
 
+.feedback{
+  width: 25px;
+  height: 70px;
+  cursor: pointer;
+  margin: 0px auto;
+  position: fixed;
+  bottom: 100px;
+  right: 0px;
+}

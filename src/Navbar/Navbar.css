@@ -27,8 +27,9 @@ a {
 /* LEFT SIDE CONTENT LINKS BAR */
 
 .petfinderLogo{
-    color: rgb(95, 23, 177);
+    color: #6504b5;
     margin: auto 50px;
+    font-size: 30px;
 }
 
 .leftHeader {
@@ -66,13 +67,15 @@ a {
 
 .searchDiv > input {
     margin-right: 5px;
-    padding: 3px 10px;
+    padding: 5px 10px;
     height: 40px;
     border-radius: 20px;
     border-style: solid;
     font-size: 18px;
     width: 15vw;
+    line-height: 5px;
 }
+
 
 .searchDiv > input:focus {
     outline: none; 
@@ -96,7 +99,7 @@ a {
 .bottomHeader {
     height: 70px;
     width: 100%;
-    background-color:  rgb(95, 23, 177);
+    background-color:  #6504b5;
     display: flex;
     flex-direction: row;
     color: white;
@@ -143,7 +146,7 @@ a {
     margin: auto;
     padding: 7px 30px;
     border-radius: 30px;
-    background-color: rgb(95, 23, 177);
+    background-color: #6504b5;
     color:white;
     font-size: 18px;
     font-weight: 500;
@@ -154,7 +157,7 @@ a {
 
 .saveSearchDiv > button:hover {
     background-color: white;
-    color: rgb(95, 23, 177);
+    color: #6504b5;
 }
 
 .saveSearchDiv > button:focus {
@@ -192,7 +195,7 @@ a {
     }
 
     .signInLinks{
-        color:  rgb(95, 23, 177);
+        color:  #6504b5;
     }
 
     .contentLinksMedium {

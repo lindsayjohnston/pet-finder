@@ -4,8 +4,9 @@ import Navbar from './Navbar/Navbar';
 import Animal from './Animal/Animal';
 import Menu from './Menu/Menu';
 import Footer from './Footer/Footer';
+import feedback from './feedback-button.png';
 import animalsObject from './Animal/Animals-object';
-import paw from './Navbar/Images/paw-solid.svg';
+
 
 
 
@@ -77,7 +78,7 @@ class App extends Component {
       //CHANGE SHOW ANIMALS
       animals.splice(0, 1); //take away default
       const showAnimals = animals.filter(animal => animal.type === 'dog');
-      this.setState({ show: showAnimals, showing: 'dogs', menuShowing: false});
+      this.setState({ show: showAnimals, showing: 'dogs', menuShowing: false });
     }
     if (event.target.id === 'cats') {
       const animals = [...this.state.animals];
@@ -103,23 +104,23 @@ class App extends Component {
 
   menuClickHandler = (event) => {
     console.log(event.target);
-    const fakeEvent= { target: {id: ''}};
+    const fakeEvent = { target: { id: '' } };
     if (event.target.id === 'hideMenu') {
       this.setState({ menuShowing: false });
-    } if(event.currentTarget.id==='dogsMenu'){
-      fakeEvent.target.id= 'dogs';
+    } if (event.currentTarget.id === 'dogsMenu') {
+      fakeEvent.target.id = 'dogs';
       this.navBarClickHandler(fakeEvent);
-    } if(event.currentTarget.id==='catsMenu'){
-      fakeEvent.target.id= 'cats';
+    } if (event.currentTarget.id === 'catsMenu') {
+      fakeEvent.target.id = 'cats';
       this.navBarClickHandler(fakeEvent);
-    } if(event.currentTarget.id==='favesMenu'){
-      fakeEvent.target.id= 'faves';
+    } if (event.currentTarget.id === 'favesMenu') {
+      fakeEvent.target.id = 'faves';
       this.navBarClickHandler(fakeEvent);
-    } if(event.currentTarget.id==='allMenu'){
-      fakeEvent.target.id= 'showAll';
+    } if (event.currentTarget.id === 'allMenu') {
+      fakeEvent.target.id = 'showAll';
       this.navBarClickHandler(fakeEvent);
     }
-};
+  };
 
   render() {
     let animals = (
@@ -142,12 +143,16 @@ class App extends Component {
     if (this.state.menuShowing === false) {
       return (
         <div className="App">
+          <img className={classes.feedback} src={feedback} alt='feedback button'></img>
           <Navbar
             totalAnimals={this.state.show.length}
             click={(event) => this.navBarClickHandler(event)}
             showing={this.state.showing}
           />
-          {animals}
+          <div className={classes.animalsDiv}>
+            {animals}
+          </div>
+
           <Footer />
         </div>
       );

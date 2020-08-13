@@ -76,13 +76,13 @@ class App extends Component {
       //CHANGE SHOW ANIMALS
       animals.splice(0, 1); //take away default
       const showAnimals = animals.filter(animal => animal.type === 'dog');
-      this.setState({ show: showAnimals, showing: 'dogs' });
+      this.setState({ show: showAnimals, showing: 'dogs', menuShowing: false});
     }
     if (event.target.id === 'cats') {
       const animals = [...this.state.animals];
       animals.splice(0, 1);
       const showAnimals = animals.filter(animal => animal.type === 'cat');
-      this.setState({ show: showAnimals, showing: 'cats' });
+      this.setState({ show: showAnimals, showing: 'cats', menuShowing: false });
     }
     if (event.target.id === 'faves') {
       const animals = [...this.state.animals];
@@ -90,13 +90,11 @@ class App extends Component {
       if (showAnimals.length > 1) {
         showAnimals.splice(0, 1); //take away the default
       }
-      this.setState({ show: showAnimals, showing: 'faves' });
-    } if (event.target.id === 'search-icon') {
-      alert('search!');
+      this.setState({ show: showAnimals, showing: 'faves', menuShowing: false });
     } if (event.target.id === 'showAll') {
       const animals = [...this.state.animals];
       animals.splice(0, 1);
-      this.setState({ show: animals, showing: 'animals' });
+      this.setState({ show: animals, showing: 'animals', menuShowing: false });
     } if (event.target.id === 'showMenu') {
       this.setState({ menuShowing: true });
     }
@@ -104,10 +102,23 @@ class App extends Component {
 
   menuClickHandler = (event) => {
     console.log(event.target);
+    const fakeEvent= { target: {id: ''}};
     if (event.target.id === 'hideMenu') {
       this.setState({ menuShowing: false });
+    } if(event.currentTarget.id==='dogsMenu'){
+      fakeEvent.target.id= 'dogs';
+      this.navBarClickHandler(fakeEvent);
+    } if(event.currentTarget.id==='catsMenu'){
+      fakeEvent.target.id= 'cats';
+      this.navBarClickHandler(fakeEvent);
+    } if(event.currentTarget.id==='favesMenu'){
+      fakeEvent.target.id= 'faves';
+      this.navBarClickHandler(fakeEvent);
+    } if(event.currentTarget.id==='allMenu'){
+      fakeEvent.target.id= 'showAll';
+      this.navBarClickHandler(fakeEvent);
     }
-  };
+};
 
   render() {
     let animals = (

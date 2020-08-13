@@ -27,21 +27,30 @@
 }
 
 .main >ul > li {
+    display: unset;
+}
+
+.main >ul > li >div{
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor:pointer;
+    width: fit-content;
+    z-index: 5;
 }
 
 .icon {
     height: 30px;
     width: 30px;
     margin: auto 10px auto 0px;
+    cursor:pointer;
 }
 
 .smallIcon {
     height: 20px;
     width: 20px;
     margin-left: 15px;
+    
 }
 
 .searchBox{
@@ -85,6 +94,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(95, 23, 177);
+    cursor:pointer;
 }
 
 .searchBox>button:focus{

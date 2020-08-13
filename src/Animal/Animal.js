@@ -14,9 +14,9 @@ const animal = (props) => {
     if (props.name === 'You haven\'t chosen any faves yet!') {
         petCardBodyDetails =
             (<div className={classes.petCardBodyDetails}>
-                <h3>{props.name}</h3>
+                <h3>No Faves Yet</h3>
                 <div className={classes.description}>
-                    <p>Click on the heart icon on your favorite animal to save to your faves.</p>
+                    <p>Click the heart icon on your favorite animals to save them to your faves.</p>
                 </div>
 
             </div>

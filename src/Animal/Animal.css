@@ -30,14 +30,14 @@
     padding: 8px;
     border-radius: 100%;
     background-color:white;
-    opacity: 70%;
+    opacity: .7;
     top: 20px;
     right: 20px;
     cursor: pointer;
 }
 
 .circleDiv:hover{
-    opacity: 100%;
+    opacity: 1;
 }
 
 .petCardBody{

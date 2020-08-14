@@ -406,14 +406,14 @@ a {
     padding: 8px;
     border-radius: 100%;
     background-color: #fff;
-    opacity: 1%;
+    opacity: 70%;
     top: 20px;
     right: 20px;
     cursor: pointer
 }
 
 .Animal__circleDiv__1plOb:hover {
-    opacity: 1%
+    opacity: 100%
 }
 
 .Animal__petCardBody__3BhXy {

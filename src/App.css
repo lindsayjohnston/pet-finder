@@ -3,6 +3,11 @@
   font-family: 'Baloo Tamma 2';
 }
 
+body{
+  width: 100%;
+  margin: 0px;
+}
+
 html{
   min-height: 100%;
   position:relative;
@@ -17,8 +22,7 @@ html{
   max-width: 1200px;
 }
  .animalsDiv {
-  /* background-color: #efeef1; */
-  background-color: lightblue;
+ background-color: #efeef1; 
   display: flex;
   justify-content: center;
  }
@@ -31,5 +35,4 @@ html{
   position: fixed;
   bottom: 100px;
   right: 0px;
-}
-
+} 

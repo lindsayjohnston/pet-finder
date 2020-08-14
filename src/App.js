@@ -7,9 +7,6 @@ import Footer from './Footer/Footer';
 import feedback from './feedback-button.png';
 import animalsObject from './Animal/Animals-object';
 
-
-
-
 const showAnimals = [...animalsObject];
 showAnimals.splice(0, 1);
 

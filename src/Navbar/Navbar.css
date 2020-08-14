@@ -1,7 +1,4 @@
-/* GLOBAL */
-/* body{
-    min-width: 700px;
-} */
+
 
 a {
     text-decoration: none;
@@ -22,7 +19,7 @@ a {
     width: 100%;
     display: flex;
     flex-direction: row;
-}
+} 
 
 /* LEFT SIDE CONTENT LINKS BAR */
 
@@ -136,7 +133,7 @@ a {
 .saveSearchDiv {
     width: 25%;
     display: flex;
-}
+}  
 
 
 
@@ -226,4 +223,4 @@ a {
         width: 100%;
         justify-content: space-between;
     }
-}
+} 

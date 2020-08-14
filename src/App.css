@@ -36,3 +36,101 @@ html{
   bottom: 100px;
   right: 0px;
 } 
+
+/* ANIMAL CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
+
+.animalCard{
+    width: 300px;
+    height: 425px;
+    border-radius: 15px;
+    margin: 30px 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    position: relative;
+    cursor: pointer;
+}
+
+.animalCard:active{
+    border: 1px grey solid;
+}
+
+
+
+.animalPhoto {
+    height: 300px;
+    width:300px;
+    object-fit: cover;
+}
+
+.circleDiv {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    padding: 8px;
+    border-radius: 100%;
+    background-color:white;
+    opacity: 70%;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.circleDiv:hover{
+    opacity: 100%;
+}
+
+.petCardBody{
+    position: relative;
+    height: 125px;
+    background-color: white;
+}
+
+.petCardBody::before{
+    position: absolute;
+    border-radius: 50% 50% 0% 0%;
+    background-color: white;
+    display: block;
+    height: 18px;
+    right: -5px;
+    left: -5px;
+    content: '';
+    bottom: 125px;
+}
+
+.petCardBodyDetails{
+    text-align: center;
+}
+
+.petCardBodyDetails >h3{
+    margin: 0px;
+    font-weight: normal;
+    font-size: 25px;
+    color: #6504b5;
+}
+.description {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.petCardBodyDetails > p {
+    margin: 0px;
+    color: #6504b5;
+}
+
+.description > p {
+    margin: 0px;
+    color: #6504b5;
+}
+
+.description > li{
+    list-style: none;
+    color: #6504b5;
+}
+
+.description > li::before{
+    content: '•';
+    padding: 0px 5px;
+}

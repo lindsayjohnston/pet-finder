@@ -4,4 +4,4 @@ This site mimics the styling and functionality of the Petfinder website. I used 
 
 ## Link to Project
 
-[Click her to see the project.](https://lindsayjohnston.github.io/pet-finder/)
+[Click here to see the project.](https://lindsayjohnston.github.io/pet-finder/)
